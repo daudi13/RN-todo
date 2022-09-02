@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, StyleSheet, Text } from 'react-native'
+import { Task } from '../components/Task'
 
 export const TodoListView = () => {
   return (
@@ -9,7 +10,9 @@ export const TodoListView = () => {
       <View style={styles.tasksWrapper}>
         <Text style={styles.sectionTitle}>Today's task</Text>
         <View styles={styles.items}>
-          {/* This is where the tasks go */}
+          <Task text={"task 1"} />
+          <Task text={"task 2"} />
+          <Task text={"task 3"} />
         </View>
       </View>
     </View>
@@ -29,8 +32,5 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 24,
     fontWeight: 'bold'
-  },
-  items: {
-
   }
 })
