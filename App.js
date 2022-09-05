@@ -1,12 +1,21 @@
 import React, {useState} from 'react';
-import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, Platform, TouchableOpacity } from 'react-native';
+import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, Platform, TouchableOpacity, Keyboard } from 'react-native';
 import { Task } from './components/Task';
 
 export default function App() {
-    const [task, setTask] = useState();
+  const [task, setTask] = useState();
+  const [taskArr, setTaskArr] = useState([]);
 
   const handleAddTask = () => {
-    console.log(task)
+    Keyboard.dismiss()
+    setTaskArr([...taskArr, task]);
+    setTask(null)
+  }
+
+  const completeTask = (index) => {
+    let taskArrCopy = [...taskArr];
+    taskArrCopy.splice(index, 1);
+    setTaskArr(taskArrCopy);
   }
   return (
     <View style={styles.container}>
@@ -14,9 +23,13 @@ export default function App() {
       <View style={styles.taskWrapper}>
         <Text style={styles.sectionTitle}>Today's tasks</Text>
         <View style={styles.items}>
-          <Task content={'task one'} />
-          <Task content={'task two'}/>
-          <Task content={'task three'}/>
+          {
+            taskArr.map((item, index) => {
+              return (<TouchableOpacity key={index} onPress={() => completeTask(index)}>
+                <Task content={item} />
+              </TouchableOpacity>)
+            })
+          }
         </View>
       </View>
       {/* Write a task section */}
