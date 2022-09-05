@@ -7,7 +7,7 @@ export default function App() {
       <View style={styles.taskWrapper}>
         <Text style={styles.sectionTitle}>Today's tasks</Text>
         <View style={styles.items}>
-          
+
         </View>
       </View>
     </View>
