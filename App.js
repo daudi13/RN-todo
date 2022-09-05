@@ -42,8 +42,9 @@ export default function App() {
         </TouchableOpacity>
       </KeyboardAvoidingView>
     </View>
-  );
+  )
 }
+
 
 const styles = StyleSheet.create({
   container: {
