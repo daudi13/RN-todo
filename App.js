@@ -9,8 +9,8 @@ export default function App() {
         <Text style={styles.sectionTitle}>Today's tasks</Text>
         <View style={styles.items}>
           <Task content={'task one'} />
-          <Task content={'task one'}/>
-          <Task content={'task one'}/>
+          <Task content={'task two'}/>
+          <Task content={'task three'}/>
         </View>
       </View>
     </View>
