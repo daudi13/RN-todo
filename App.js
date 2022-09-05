@@ -15,7 +15,7 @@ export default function App() {
       </View>
       {/* Write a task section */}
       <KeyboardAvoidingView style={styles.writeTask} behavior={Platform.OS === "ios" ? "padding" : "height"}>
-        <TextInput style={styles.input} placeholder={'write a task'} />
+        <TextInput style={styles.input} placeholder={'write a task'} placeholderTextColor="grey" />
         <TouchableOpacity>
           <View style={styles.addWrapper}>
             <Text style={styles.addText}>+</Text>
